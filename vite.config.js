@@ -44,6 +44,5 @@ export default defineConfig(({ command }) => {
         sort: 'mobile-first',
       }),
     ],
-    base: '/goit-js-hw-11/',
   };
 });
