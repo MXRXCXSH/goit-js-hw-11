@@ -53,6 +53,17 @@ form.addEventListener('submit', event => {
       console.log(data.hits);
       createGallery(data.hits);
     })
-    .catch(error => {});
+    .catch(error => {
+      hideLoader();
+      iziToast.error({
+        message: `${errorTxt}`,
+        position: 'topRight',
+        backgroundColor: '#ef4040',
+        iconUrl: rejectIcon,
+        maxWidth: 432,
+        messageColor: '#fafafb',
+      });
+      console.log(error);
+    });
   form.reset();
 });
