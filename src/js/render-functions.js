@@ -3,8 +3,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 gallery.classList.add('container');
-const loader = document.createElement('div');
-loader.className = 'loader';
+const loader = document.querySelector('.loader');
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
@@ -45,7 +44,6 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  gallery.parentElement.append(loader);
   loader.style.display = 'block';
 }
 
