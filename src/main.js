@@ -39,7 +39,6 @@ form.addEventListener('submit', event => {
   getImagesByQuery(query)
     .then(data => {
       hideLoader();
-      console.log(data.hits);
       if (data.hits.length === 0) {
         iziToast.error({
           message: `${errorTxt}`,
