@@ -1,13 +1,14 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const gallery = document.querySelector('.gallery');
+gallery.classList.add('container');
+const loader = document.createElement('div');
+loader.className = 'loader';
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
-const gallery = document.querySelector('.gallery');
-const loader = document.createElement('div');
-loader.className = 'loader';
 
 export function createGallery(images) {
   const markup = images
@@ -22,7 +23,16 @@ export function createGallery(images) {
         downloads,
       }) => {
         return `<li class="card">
-        <a href="${largeImageURL}"><img src="${webformatURL}" alt="${tags}"/></a><div><p>Likes ${likes}</p><p>Vievs ${views}</p><p>Comments ${comments}</p><p>Downloads ${downloads}</p></div></li>`;
+        <a href="${largeImageURL}">
+        <img src="${webformatURL}" alt="${tags}"/>
+        <div class='descriptions'>
+        <p>Likes <span>${likes}</span></p>
+        <p>Vievs <span>${views}</span></p>
+        <p>Comments <span>${comments}</span></p>
+        <p>Downloads <span>${downloads}</span></p>
+        </div>
+        </a>
+        </li>`;
       }
     )
     .join('');

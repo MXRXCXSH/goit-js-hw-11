@@ -16,6 +16,7 @@ const errorTxt =
   'Sorry, there are no images matching your search query. Please, try again!';
 
 const form = document.querySelector('.form');
+form.classList.add('container');
 
 form.addEventListener('submit', event => {
   event.preventDefault();
@@ -54,6 +55,3 @@ form.addEventListener('submit', event => {
     .catch(error => {});
   form.reset();
 });
-
-//
-//
