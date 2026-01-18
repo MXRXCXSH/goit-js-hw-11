@@ -51,6 +51,7 @@ form.addEventListener('submit', event => {
         return;
       }
       createGallery(data.hits);
+      console.log(data.hits);
     })
     .catch(error => {});
   form.reset();
