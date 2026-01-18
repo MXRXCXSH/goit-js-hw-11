@@ -50,8 +50,8 @@ form.addEventListener('submit', event => {
         });
         return;
       }
-      createGallery(data.hits);
       console.log(data.hits);
+      createGallery(data.hits);
     })
     .catch(error => {});
   form.reset();
